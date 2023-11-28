@@ -83,9 +83,6 @@ def create_database():
 
     return db
 
-def read_files():
-    return 1
-
 class DatabaseConnection:
 
     def __init__(self):
