@@ -13,7 +13,7 @@ function App() {
   const [usernameError, setUsernameError] = useState("")
   const [passwordError, setPasswordError] = useState("")
   const [user, setUser] = useState("patient")
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const chooseUser = (user) =>{
     setUser(user)
@@ -21,9 +21,9 @@ function App() {
 
   const loginClick = () => {
     // Set initial error values to empty
-    setUsernameError("")
-    setPasswordError("")
-
+    setUsernameError("");
+    setPasswordError("");
+    console.log(user);
     // Check if the user has entered both fields correctly
     if ("" === username) {
         setUsernameError("Please enter your email")
@@ -37,9 +37,10 @@ function App() {
 
     // check if they are in the system using api call
 
-    // if (user === 'admin') {
-    //   navigate('/pages/admin/OptionSelect');
-    // }
+    if (user === 'admin') {
+      let path = '/pages/admin/OptionSelect';
+      navigate(path, {replace: true});
+    }
 
     // if (user === 'nurse') {
     //   navigate('/pages/nurse/OptionSelect');
@@ -82,7 +83,7 @@ function App() {
 
         <PickUserButton user={user} chooseUser={chooseUser}/>
 
-        <button onClick={()=>loginClick} className={"loginButtonDefault"}>
+        <button onClick={loginClick} className={"loginButtonDefault"}>
             Login
         </button>
 

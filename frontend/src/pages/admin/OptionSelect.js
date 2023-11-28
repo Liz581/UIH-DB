@@ -4,7 +4,7 @@ import './OptionSelect.css';
 
 function OptionSelect() {
     // const navigate = useNavigate();
-  
+    console.log("WTF");
     const registerN = () => {
   
     }

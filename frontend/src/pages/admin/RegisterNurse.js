@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './RegisterNurse.css';
-
+import Nurse from database_setup.py
 
 function RegisterNurse() {
     const [employee_id, setEmployeeId] = useState();
@@ -57,7 +57,7 @@ function RegisterNurse() {
             setError("Please fill this in")
             return
         }
-
+        var nurse  = new Nurse(self, employee_id, name, age, gender, phone_number, address, username, password);
         // api call to send the info to the backend to insert
 
     }
