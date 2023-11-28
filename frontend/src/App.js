@@ -1,6 +1,7 @@
 // To run: cd frontend -> npm start
 
 import React, { useState} from "react";
+import { useNavigate } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import PickUserButton from "./components/PickUserButton";
@@ -12,6 +13,7 @@ function App() {
   const [usernameError, setUsernameError] = useState("")
   const [passwordError, setPasswordError] = useState("")
   const [user, setUser] = useState("patient")
+  // const navigate = useNavigate();
 
   const chooseUser = (user) =>{
     setUser(user)
@@ -34,6 +36,18 @@ function App() {
     }
 
     // check if they are in the system using api call
+
+    // if (user === 'admin') {
+    //   navigate('/pages/admin/OptionSelect');
+    // }
+
+    // if (user === 'nurse') {
+    //   navigate('/pages/nurse/OptionSelect');
+    // }
+
+    // if (user === 'patient') {
+    //   navigate('/pages/patient/OptionSelect');
+    // }
 
   }
 
@@ -62,11 +76,16 @@ function App() {
           />
         <label className="errorLabel">{passwordError}</label>
 
+        <div className={"subtitle"}>
+            <div>Who are you? </div>
+        </div>
+
+        <PickUserButton user={user} chooseUser={chooseUser}/>
+
         <button onClick={()=>loginClick} className={"loginButtonDefault"}>
             Login
         </button>
 
-        <PickUserButton user={user} chooseUser={chooseUser}/>
       </header>
     </div>
   );

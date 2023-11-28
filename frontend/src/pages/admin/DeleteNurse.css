@@ -1,0 +1,54 @@
+.flex-container {
+    display: flex;
+    margin: 10px;
+}
+
+.flex-child {
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+
+.main {
+    background-color: #282c34;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+}
+
+.title {
+    display: flex;
+    font-size: 32px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.inputContainer {
+    font-size: 16px;
+}
+
+.buttonDefault {
+    font-size: 16px;
+    background-color: #1d1d1d;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    border: 0;
+    margin-bottom: 8px;
+}

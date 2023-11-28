@@ -1,5 +1,6 @@
 import sqlite3
 from sqlite3 import Error
+import csv
 
 db_name = "UIH_DB.db"
 
@@ -32,14 +33,6 @@ class Patient:
         self.address = address
 
 def create_database():
-    """
-    creates a database with a table of variable fields
-
-    :return:
-        the database connection object
-    :rtype:
-        Connection
-    """
 
     # connects to the database if it exists, if not then creates a new database
     try:
@@ -64,7 +57,9 @@ def create_database():
         age SMALLINT NOT NULL,
         gender CHAR(2) NOT NULL,
         phone_number VARCHAR(15) NOT NULL,
-        address VARCHAR(50) NOT NULL
+        address VARCHAR(50) NOT NULL,
+        username VARCHAR(50) NOT NULL,
+        password VARCHAR(50) NOT NULL
     );'''
     cursor.execute(sql)
 
@@ -77,7 +72,9 @@ def create_database():
         occupation VARCHAR(50) NOT NULL,
         medical_history MEDIUMTEXT NOT NULL,
         phone_number VARCHAR(15) NOT NULL,
-        address VARCHAR(50) NOT NULL
+        address VARCHAR(50) NOT NULL,
+        username VARCHAR(50) NOT NULL,
+        password VARCHAR(50) NOT NULL
     );'''
     cursor.execute(sql)
 
@@ -86,21 +83,15 @@ def create_database():
 
     return db
 
+def read_files():
+    return 1
+
 class DatabaseConnection:
 
     def __init__(self):
-        """
-        class constructor: generates a database connection object
-        """
         self.__db = create_database()
 
     def insert_vaccine(self, vaccine:Vaccine):
-        """
-        inserts a vaccine object into the database
-
-        return:
-            boolean indicating if the operation was successful or not
-        """
         try:
             # get cursor
             cursor = self.__db.cursor()

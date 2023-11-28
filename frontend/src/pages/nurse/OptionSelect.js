@@ -24,14 +24,6 @@ function OptionSelect() {
     const updateV = () => {
 
     }
-
-    const viewN = () => {
-
-    }
-
-    const viewP = () => {
-
-    }
   
     return (
       <div className="App">
@@ -40,31 +32,23 @@ function OptionSelect() {
             <div>Please select an option</div>
         </div>
           <button onClick={()=>registerN} className={"buttonDefault"}>
-              Register a Nurse
+              Update Information
           </button>
 
           <button onClick={()=>updateN} className={"buttonDefault"}>
-              Update Nurse Info
+              Schedule Time
           </button>
 
           <button onClick={()=>deleteN} className={"buttonDefault"}>
-              Delete a Nurse
+              Cancel a Time
           </button>
 
           <button onClick={()=>addV} className={"buttonDefault"}>
-              Add Vaccine
+              View Information
           </button>
 
           <button onClick={()=>updateV} className={"buttonDefault"}>
-              Update Vaccine
-          </button>
-
-          <button onClick={()=>viewN} className={"buttonDefault"}>
-              View Nurse
-          </button>
-
-          <button onClick={()=>viewP} className={"buttonDefault"}>
-              View Patient Info
+              Vaccination
           </button>
         </header>
       </div>
