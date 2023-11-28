@@ -98,14 +98,8 @@ class DatabaseConnection:
         """
         inserts a vaccine object into the database
 
-        :param vaccine:
-            the vaccine object
-        :type Vaccine:
-            vaccine
-        :return:
+        return:
             boolean indicating if the operation was successful or not
-        :rtype:
-            bool
         """
         try:
             # get cursor
@@ -135,14 +129,12 @@ class DatabaseConnection:
             print(e)
             return False
       
-    def get_all_timestamps(self):
+    def query_search(self):
         """
-        gets all bitcoin timestamps in the database
+        runs and returns list of info from query in the database
 
-        :return:
-            a list of bitcoin timestamps
-        :rtype:
-            list[BitcoinTimestamp]
+        return:
+            a list of data
         """
         try:
             output = []
@@ -169,5 +161,6 @@ class DatabaseConnection:
         except Error as e:
             print(e)
             return []
+        
 if __name__ == '__main__':
     create_database()
