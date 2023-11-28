@@ -169,3 +169,5 @@ class DatabaseConnection:
         except Error as e:
             print(e)
             return []
+if __name__ == '__main__':
+    create_database()
